@@ -13,18 +13,27 @@ import {
 } from 'react-native';
 
 export default class myFirstApp extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {times:0}
+  }
+
+  timesPlus() {
+    let times = this.state.times
+    times++
+    this.setState({
+      times: times
+    })
+  }
+
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
+        <Text style={styles.welcome} onPress={this.timesPlus.bind(this)}>
+          有本事点我一下
         </Text>
         <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
+          你点了我{this.state.times}次
         </Text>
       </View>
     );
