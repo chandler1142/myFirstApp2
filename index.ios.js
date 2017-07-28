@@ -37,9 +37,7 @@ var myFirstApp = React.createClass({
 
 
         return (
-            <TabBarIOS
-                tintColor="white"
-                barTintColor="darkslateblue">
+            <TabBarIOS tintColor="#ee735c">
                 <TabBarIOS.Item
                     title="Blue Tab"
                     icon={{uri: base64Icon, scale: 3}}
